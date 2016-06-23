@@ -1,4 +1,4 @@
-name := "scala"
+name := "AuctionAlgorithmScala"
 
 scalaVersion := "2.11.7"
 
