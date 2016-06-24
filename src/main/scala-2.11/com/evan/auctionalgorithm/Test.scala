@@ -11,7 +11,7 @@ object Test
 		val n = 100
 		val percent = (0 until n).map(i =>
 		{
-			val testC = -1 * util.randIntMat(8,8)
+			val testC = -1 * util.randIntMat(8,10)
 			val auc = new AssignmentProblem(testC)
 			val (u1: DenseMatrix[Int], s1: Int) = auc.auctionSolve(auc.auctionRound)
 			val (u2: DenseMatrix[Int], s2: Int) = auc.enumSolve()
@@ -19,7 +19,7 @@ object Test
 		}).seq.sum / n.toDouble
 
 		val formatter = java.text.NumberFormat.getNumberInstance
-		val p = formatter.format(percent)
-		println(s"Percentage correct: $p")
+		val p = formatter.format(percent * 100d)
+		println(s"Percentage correct: $p%")
 	}
 }
