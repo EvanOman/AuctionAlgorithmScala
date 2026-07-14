@@ -1,7 +1,21 @@
-name := "AuctionAlgorithmScala"
+name := "auction-algorithm"
+organization := "com.evan"
+version := "1.0.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "3.3.4"
 
-libraryDependencies += "org.scalanlp" % "breeze_2.11" % "0.12"
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-feature",
+  "-unchecked",
+  "-Wunused:all",
+  "-Werror"
+)
 
-connectInput in run := true
+libraryDependencies ++= Seq(
+  "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4",
+  "org.scalameta" %% "munit" % "1.0.2" % Test
+)
+
+Compile / run / connectInput := true
+Compile / mainClass := Some("com.evan.auctionalgorithm.Main")
